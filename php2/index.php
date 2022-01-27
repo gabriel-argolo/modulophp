@@ -44,8 +44,25 @@ switch ($tipo) {
 echo "<hr>";
 
 $numero = 0;
-
+/*
 while ($numero < 10) {
     echo "N: ". $numero++. "<br/>";
+}*/
+$ingredientes = ['açucar', 'farinha de trigo', 'ovo', 'leite', 'fermento em po'];
+    echo'<h2>Ingredientes</h2>';
+echo '<ul>';
+foreach ($ingredientes as $chave => $ingrediente) {
+    echo '<li>'.$chave.": ".$ingrediente.'</li>';
 }
+echo '</ul>';
+
+echo '<hr>';
+
+for($i=0; $i<10; $i++){
+    echo '<br>';
+    for($j=0; $j<10; $j++){
+        echo '-';
+    }
+}
+
 ?>
