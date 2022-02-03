@@ -1,11 +1,34 @@
 <?php
-function dividir($numero){
-    $metade = $numero/2;
-    echo $metade."<br/>";
 
-    if(round($metade)>0){
+function somar($numero1, $numero2, $numero3 = 0) {
+    $total = $numero1 + $numero2 + $numero3;
+    return $total;
+}
+echo $soma = somar(1, 1);
+
+echo '<hr/>';
+
+$dizimo = function (int $valor) {
+    return $valor * 0.1;
+};
+
+echo $dizimo(80);
+
+echo '<hr/>';
+
+$dizimo2 = fn ($valor) => $valor * 0.1;
+echo $dizimo2(80);
+
+function dividir($valor) {
+    $metade = $valor/2;
+    echo $metade.'<br/>';
+    if(round($metade) > 0){
         dividir($metade);
     }
 }
 
-dividir(100);
+echo $exemplo = dividir(100); 
+
+$numeros = [10,20,30,35,40];
+
+filtrados = array_filter;
