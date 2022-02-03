@@ -66,3 +66,4 @@ $d = date('N', $time);
 }
 $data = ('2022-02-03');
 retornaData($data);
+echo '<hr>';
