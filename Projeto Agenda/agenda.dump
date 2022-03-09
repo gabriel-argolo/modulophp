@@ -1,0 +1,10 @@
+CREATE TABLE contato(
+    id int (5) not null auto_increment,
+    nome varchar(30) not null,
+    sobrenome varchar(40) not null,
+    cidade varchar (50) not null,
+    email varchar(150) not null,
+    telefone varchar (30) not null,
+    PRIMARY KEY (id),
+    UNIQUE id (id)
+);
