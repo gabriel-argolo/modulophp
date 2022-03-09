@@ -1,16 +1,22 @@
 <?php
-//SELEÇÃO DOS DADOS QUE SERÃO INSERIDOS
-$sql = "INSERT INTO contato (nome, sobrenome, cidade, email, telefone)
-VALUES('$nome', '$sobrenome', '$cidade', '$email', '$telefone')";
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$cidade = $_POST['cidade'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
 
-//CONEXAO COM BANCO
-$con = mysqli_connect("localhost","root") or die("Wrong database config!");
+//dados que serão incluidos
+$sql = "INSERT INTO contato (nome, sobrenome, cidade, email, telefone) 
+VALUES ('$nome', '$sobrenome', '$cidade', '$email', '$telefone')";
 
-//SELEÇAO DO BANCO
-mysqli_select_db($session, "agenda") or die ("Database not found!");
+//conexão com o banco de dados
+$con = mysqli_connect("localhost", "root") or die("Configuração de Banco de Dados Errada!");
 
-//INSERÇÃO DOS DADOS
-mysqli_query($session, $con) or die ("<font style = Arial color=red><h1>Database record error</h1></font>");
-echo ("<font style =  Arial color =green><h1>Database record OK!</h1></font>");
+//Selecionando o banco de dados...
+mysqli_select_db($con, "agenda") or die("Banco de Dados Inexistente!");
 
-?>
+//Inserindo os dados
+mysqli_query($con, $sql) or die("<font style=Arial color=red><h1>Houve um erro na gravação dos dados</h1></font>");
+
+echo "<font style=Arial color=green><h1>Cadastro efetuado com sucesso!</h1></font>";
+
