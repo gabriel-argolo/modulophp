@@ -3,8 +3,8 @@ CREATE TABLE contato(
     nome varchar(30) not null,
     sobrenome varchar(40) not null,
     cidade varchar (50) not null,
-    email varchar(150) not null,
-    telefone varchar (30) not null,
+    email varchar(20),
+    telefone varchar (30),
     PRIMARY KEY (id),
     UNIQUE id (id)
 );

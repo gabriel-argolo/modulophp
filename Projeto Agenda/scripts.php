@@ -2,12 +2,12 @@
 $nome = $_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
 $cidade = $_POST['cidade'];
-$email = $_POST['email'];
+$mail = $_POST['email'];
 $telefone = $_POST['telefone'];
 
 //dados que serão incluidos
 $sql = "INSERT INTO contato (nome, sobrenome, cidade, email, telefone) 
-VALUES ('$nome', '$sobrenome', '$cidade', '$email', '$telefone')";
+VALUES ('$nome', '$sobrenome', '$cidade', '$mail', '$telefone')";
 
 //conexão com o banco de dados
 $con = mysqli_connect("localhost", "root") or die("Configuração de Banco de Dados Errada!");
