@@ -8,3 +8,7 @@ echo "Email:<input type='text' name='email'><br>";
 echo "Telefone:<input type='text' name='telefone'><br>";
 echo "<input type='Submit' value='Enviar'>";
 ?>
+<html>
+<button><a target="_blank" href='list.php'>Lista de Contatos</a> </button>
+
+</html>
