@@ -1,9 +1,11 @@
 <?php
 require 'config.php';
-$lista = [];
-$sql = $pdo->query("SELECT * FROM usuarios");
-$lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+require 'dao/UsuarioDAOMySQL.php';
+$usuarioDao = new UsuarioDAOMySQL($pdo);
+$lista = $usuarioDao->findAll();
+
 ?>
+
 <a href="adicionar.php">ADICIONAR USUARIO</a>
 <table border="1" width="100%">
     <tr>
@@ -14,12 +16,12 @@ $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
     </tr>
     <?php foreach ($lista as $usuario) : ?>
         <tr>
-            <td><?= $usuario['id']; ?></td>
-            <td><?= $usuario['nome']; ?></td>
-            <td><?= $usuario['email']; ?></td>
+            <td><?= $usuario->getId(); ?></td>
+            <td><?= $usuario->getNome(); ?></td>
+            <td><?= $usuario->getEmail(); ?></td>
             <td>
-                <a href="editar.php?id=<?=$usuario['id']; ?>"> [ EDITAR ] </a>
-                <a href="excluir.php?id=<?=$usuario['id']; ?>"  onclick="return confirm('Tem certeza que deseja excluir esse registro')"> [ EXCLUIR ] </a>
+                <a href="editar.php?id=<?= $usuario->getId(); ?>"> [ EDITAR ] </a>
+                <a href="excluir.php?id=<?= $usuario->getId(); ?>" onclick="return confirm('Tem certeza que deseja excluir esse registro')"> [ EXCLUIR ] </a>
             </td>
         </tr>
     <?php endforeach; ?>
